@@ -13,11 +13,19 @@ router.get('/healthcheck', function(req, res) {
 	res.send(responseObject);
 });
 
-router.get('/like/:icecreamchoice/:name', function(req, res) {
+var database = []; 
+
+router.post('/like/:icecreamchoice/:name', function(req, res) {
 	var choice = req.params.icecreamchoice;
 	var name = req.params.name;
-	var responseObject = {message: 'Hey ' + name +  ' I like ' + choice + ' too!'};
+	database.push({choice: choice, name: name});
+	
+	var responseObject = {message: 'Hey ' + name +  '. I like ' + choice + ' too!'};
 	res.send(responseObject);
+});
+
+router.get('likes', function(req, res) {
+	res.send(database);
 });
 
 
