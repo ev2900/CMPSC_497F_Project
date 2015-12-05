@@ -29,12 +29,6 @@ router.post('/like/:icecreamchoice/:name', function(req, res) {
 });
 
 router.get('/likes', function(req, res) {
-	if(database.length == 0) {
-		res.status(404).send();
-	} else {
-		res.send(database);
-	} 
-
 	res.send(database);
 });
 
