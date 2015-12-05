@@ -24,7 +24,7 @@ router.post('/like/:icecreamchoice/:name', function(req, res) {
 	res.send(responseObject);
 });
 
-router.get('likes', function(req, res) {
+router.get('/likes', function(req, res) {
 	res.send(database);
 });
 
