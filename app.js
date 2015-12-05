@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/public'));
 //Home Page
 app.get('/',function(req,res){
 
-  res.sendFile(path.join(__dirname+'/index.html'));
+  res.sendFile(path.join(__dirname+'/views/index.html'));
 });
 
 app.listen(3000);
