@@ -1,1 +1,2 @@
-var app = angular.module('QuadreplexApp', []);
+//var app = angular.module('QuadreplexApp', []);
+
