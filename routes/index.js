@@ -26,7 +26,7 @@ router.post('/like/:icecreamchoice/:name', function(req, res) {
 	};
 	else {
 		res.send();
-	}
+	};
 });
 
 router.get('/likes', function(req, res) {
