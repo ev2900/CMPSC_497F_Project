@@ -23,10 +23,10 @@ router.post('/like/:icecreamchoice/:name', function(req, res) {
 		
 		var responseObject = {message: 'Hey ' + name +  '. I like ' + choice + ' too!'};
 		res.send(responseObject);
-	};
+	}
 	else {
 		res.send();
-	};
+	}
 });
 
 router.get('/likes', function(req, res) {
