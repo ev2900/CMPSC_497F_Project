@@ -23,13 +23,18 @@ router.post('/like/:icecreamchoice/:name', function(req, res) {
 		
 		var responseObject = {message: 'Hey ' + name +  '. I like ' + choice + ' too!'};
 		res.send(responseObject);
-	}
-	else {
-		res.send();
+	} else {
+		res.status(401).send();
 	}
 });
 
 router.get('/likes', function(req, res) {
+	if(database.length == 0) {
+		res.status(404).send();
+	} else {
+		res.send(database);
+	} 
+
 	res.send(database);
 });
 
