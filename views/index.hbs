@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Empty column -->
-    <div class="col-lg-2 col-xs-0"> </div>
+    <div id="content" ng-app="QuadreplexApp" ng-controller="QuadreplexController">
+            
+        <row>
+            <div class="col-lg-1"> </div>
+                    
+            <div class="col-lg-5" align="center"> 
+                <br>
+                <h3 class="green"> Sequence </h3>
+                <br>
+                <input type="text" ng-model="quadreplex" class="box">
+            </div>
 
-    <div class="col-lg-8 col-xs-12">
+            <div class="col-lg-5" align="center"> 
+                <br>
+                <h3 class="green"> Feature </h3>
+                <br>
+                <input type="text" ng-model="featre" class="box">
+            </div>
 
-        <div align="center" style="font-size: 300%; line-height: 70px; margin-top:12.5%;">
+            <div class="col-lg-1"> </div>
+        </row>
 
-            Hi, we're <span style="color: #3f87ff; !important"> Senti Sense. </span>
-            <br>
-            Simple Twitter Analytics
-            <br>
-            Direct Messaged to You
+        <row>
+            <div class="col-lg-12" align="center">
+                <br><br><br><br>            
+                <a href="" class="btn btn-info btn-lg" role="button" style="color: #fff; font-size: 20px; background-color: #5FA620; radius:10px; border: 0 none;"> Submit </a>
+            </div>
+        </row>
 
-            <br><br>
-
-            <a href="/users/create" class="btn btn-info btn-lg" role="button" style="color: #fff; font-size: 25px; background-color: #3f87ff; radius:10px;"> Sign Up </a>
-
-            <br><br>
-
-        </div>
-
-    </div>
-
-    <!-- Empty column -->
-    <div class="col-lg-2 col-xs-0"> </div>    
+    </div>   
 
 </html>
