@@ -15,7 +15,7 @@ router.get('/healthcheck', function(req, res) {
 
 router.get('/like/:icecreamchoice', function(req, res) {
 	var choice = req.params.icecreamchoice;
-	var responseObject = {message: 'I like' + choice + 'too!'};
+	var responseObject = {message: 'I like ' + choice + ' too!'};
 	res.send(responseObject);
 });
 
