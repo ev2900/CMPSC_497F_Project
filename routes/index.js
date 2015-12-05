@@ -18,10 +18,15 @@ var database = [];
 router.post('/like/:icecreamchoice/:name', function(req, res) {
 	var choice = req.params.icecreamchoice;
 	var name = req.params.name;
-	database.push({choice: choice, name: name});
-	
-	var responseObject = {message: 'Hey ' + name +  '. I like ' + choice + ' too!'};
-	res.send(responseObject);
+	if(name == 'chris') {
+		database.push({choice: choice, name: name});
+		
+		var responseObject = {message: 'Hey ' + name +  '. I like ' + choice + ' too!'};
+		res.send(responseObject);
+	};
+	else {
+		res.send();
+	}
 });
 
 router.get('/likes', function(req, res) {
