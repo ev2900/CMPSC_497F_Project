@@ -16,6 +16,12 @@ router.get('/healthcheck', function(req, res) {
 var database = []; 
 
 router.post('/ilike/:icecreamchoice/:name', function(req, res) {
+	if(req.body.formfactor) {
+		console.log(req.body.formfactor);
+	} else {
+		console.log('No form formfactor!');
+	}
+	
 	var choice = req.params.icecreamchoice;
 	var name = req.params.name;
 	if(name == 'chris') {
