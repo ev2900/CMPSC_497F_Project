@@ -39,10 +39,23 @@ router.get('/likes', function(req, res) {
 	if(logvalue && logvalue == 'info') {
 		console.log("Request recived for /likes");
 	}
+
+	var select = req.query.select;
 	if(database.length == 0) {
-		res.status(404).send();
+		var responseObject = undefined;
+		if(select && select == 'count') {
+			responseObject = {count: 0};
+		}
+
+
+		res.status(404).send(responseObject);
 	} else {
-		res.send(database);
+		var responseObject = database;
+		if(select && select == 'count') {
+			responseObject = {count: database.length};
+		}
+
+		res.send(responseObject);
 	}
 });
 
