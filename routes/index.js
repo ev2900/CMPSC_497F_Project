@@ -37,7 +37,7 @@ router.post('/ilike/:icecreamchoice/:name', function(req, res) {
 	var choice = req.params.icecreamchoice;
 	var name = req.params.name;
 	var newChoice = new ChoiceModel();
-	newChoice.icecreamchoice = choice;
+	newChoice.icecreamname = choice;
 	newChoice.name = name;
 	newChoice.save(function(err, savedObject) {
 		if(err) {
