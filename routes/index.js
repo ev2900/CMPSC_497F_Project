@@ -35,6 +35,10 @@ router.post('/ilike/:icecreamchoice/:name', function(req, res) {
 });
 
 router.get('/likes', function(req, res) {
+	var logvalue = req.headers['log'];
+	if(logvalue && logvalue == 'info') {
+		console.log("Request recived for /likes");
+	}
 	if(database.length == 0) {
 		res.status(404).send();
 	} else {
