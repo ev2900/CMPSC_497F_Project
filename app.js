@@ -8,9 +8,6 @@ var serverstat = require('./routes/serverstatus');
 
 var app = express();
 
-//Data Base
-mongoose.connect('mongodb://chris:everest2900@ds059644.mongolab.com:59644/cmpsc_497');
-
 //Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

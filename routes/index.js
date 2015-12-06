@@ -1,12 +1,20 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://chris:everest2900@ds059644.mongolab.com:59644/cmpsc_497');
+
+var mySchema = mongoose.Schema({
+	icecreamname: String, 
+	name: String
+});
+
+var ChoiceModel = mongoose.model('choices', mySchema);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index');
 });
-
-
 
 router.get('/healthcheck', function(req, res) {
 	var responseObject = { message: 'OK' };
@@ -22,16 +30,23 @@ router.post('/ilike/:icecreamchoice/:name', function(req, res) {
 		console.log('No form formfactor!');
 	}
 
+	if(name == 'chris') {
+		console.log('Name is ' + name);
+	}
+
 	var choice = req.params.icecreamchoice;
 	var name = req.params.name;
-	if(name == 'chris') {
-		database.push({choice: choice, name: name});
-		
-		var responseObject = { message: 'Hey ' + name +  '! I like ' + choice + ' too!' };
-		res.send(responseObject);
-	} else {
-		res.status(401).send();
-	}
+	var newChoice = new ChoiceModel();
+	newChoice.icecreamchoice = choice;
+	newChoice.name = name;
+	newChoice.save(function(err, savedObject) {
+		if(err) {
+			console.log(err);
+			res.status(500).send();
+		} else {
+			res.send(savedObject);
+		}
+	});
 });
 
 router.get('/likes', function(req, res) {
