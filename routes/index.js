@@ -15,13 +15,13 @@ router.get('/healthcheck', function(req, res) {
 
 var database = []; 
 
-router.post('/like/:icecreamchoice/:name', function(req, res) {
+router.post('/ilike/:icecreamchoice/:name', function(req, res) {
 	var choice = req.params.icecreamchoice;
 	var name = req.params.name;
 	if(name == 'chris') {
 		database.push({choice: choice, name: name});
 		
-		var responseObject = {message: 'Hey ' + name +  '. I like ' + choice + ' too!'};
+		var responseObject = { message: 'Hey ' + name +  '! I like ' + choice + ' too!' };
 		res.send(responseObject);
 	} else {
 		res.status(401).send();
@@ -29,9 +29,11 @@ router.post('/like/:icecreamchoice/:name', function(req, res) {
 });
 
 router.get('/likes', function(req, res) {
-	res.send(database);
+	if(database.length == 0) {
+		res.status(404).send();
+	} else {
+		res.send(database);
+	}
 });
-
-
 
 module.exports = router;
