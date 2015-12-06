@@ -21,7 +21,7 @@ router.post('/ilike/:icecreamchoice/:name', function(req, res) {
 	} else {
 		console.log('No form formfactor!');
 	}
-	
+
 	var choice = req.params.icecreamchoice;
 	var name = req.params.name;
 	if(name == 'chris') {
