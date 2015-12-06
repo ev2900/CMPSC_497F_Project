@@ -56,22 +56,29 @@ router.get('/likes', function(req, res) {
 	}
 
 	var select = req.query.select;
-	if(database.length == 0) {
-		var responseObject = undefined;
-		if(select && select == 'count') {
-			responseObject = {count: 0};
+
+	ChoiceModel.find({}, function(err, foundData) {
+		if(err) {
+			console.log(err);
+			res.status(500).send();
+		} else {
+			if(foundData.length == 0) {
+				var responseObject = undefined;
+				if(select && select == 'count') {
+					responseObject = {count: 0};
+				}
+
+				res.status(404).send(responseObject);
+			} else {
+				var responseObject = foundData;
+				if(select && select == 'count') {
+					responseObject = {count: database.length};
+				}
+				res.send(responseObject);
+			}
 		}
+	});
 
-
-		res.status(404).send(responseObject);
-	} else {
-		var responseObject = database;
-		if(select && select == 'count') {
-			responseObject = {count: database.length};
-		}
-
-		res.send(responseObject);
-	}
 });
 
 module.exports = router;
