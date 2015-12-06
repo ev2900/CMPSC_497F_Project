@@ -5,7 +5,6 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('CMPSC_497F_Project:server');
 var http = require('http');
 
 /**
