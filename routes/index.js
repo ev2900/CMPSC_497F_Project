@@ -5,8 +5,8 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://chris:everest2900@ds059644.mongolab.com:59644/cmpsc_497');
 
 var mySchema = mongoose.Schema({
-	icecreamname: String, 
-	name: String
+	input_genome: String, 
+	gff_file: String
 });
 
 var ChoiceModel = mongoose.model('choices', mySchema);
@@ -23,22 +23,22 @@ router.get('/healthcheck', function(req, res) {
 
 var database = []; 
 
-router.post('/ilike/:icecreamchoice/:name', function(req, res) {
+router.post('/ilike/:icecreamchoice/:gff_file', function(req, res) {
 	if(req.body.formfactor) {
 		console.log(req.body.formfactor);
 	} else {
 		console.log('No form formfactor!');
 	}
 
-	if(name == 'chris') {
-		console.log('Name is ' + name);
+	if(gff_file == 'chris') {
+		console.log('Name is ' + gff_file);
 	}
 
 	var choice = req.params.icecreamchoice;
-	var name = req.params.name;
+	var gff_file = req.params.gff_file;
 	var newChoice = new ChoiceModel();
-	newChoice.icecreamname = choice;
-	newChoice.name = name;
+	newChoice.input_genome = choice;
+	newChoice.gff_file = gff_file;
 	newChoice.save(function(err, savedObject) {
 		if(err) {
 			console.log(err);
