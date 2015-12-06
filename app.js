@@ -7,6 +7,8 @@ var config = require('./config');
 
 var routes = require('./routes/index');
 
+mongoose.connect(config.mongoUri);
+
 var app = express();
 
 //Body Parser
