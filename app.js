@@ -3,6 +3,8 @@ var path    = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+var config = require('./config');
+
 var routes = require('./routes/index');
 
 var app = express();
