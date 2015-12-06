@@ -1,1 +1,0 @@
-var ChoiceModel = require('../models/ChoiceModel').ChoiceModel;
