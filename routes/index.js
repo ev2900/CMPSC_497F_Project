@@ -16,9 +16,9 @@ router.get('/', function(req, res, next) {
 	res.render('index');
 });
 
-router.post('/ilike/:icecreamchoice/:gff_file', function(req, res) {
+router.post('/ilike/:input_genome/:gff_file', function(req, res) {
 
-	var choice = req.params.icecreamchoice;
+	var choice = req.params.input_genome;
 	var gff_file = req.params.gff_file;
 	var newChoice = new ChoiceModel();
 
