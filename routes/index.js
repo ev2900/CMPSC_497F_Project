@@ -32,6 +32,6 @@ router.post('/ilike/:genome/:gff', function(req, res) {
 			res.send(savedObject);
 		}
 	});
-};
+});
 
 module.exports = router;
