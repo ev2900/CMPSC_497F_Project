@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
-var serverstat = require('./routes/serverstatus');
 
 var app = express();
 
@@ -21,7 +20,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Home Page
 app.use('/', routes);
-app.use('/serverstatus', serverstat);
 
 app.listen(3000);
 
