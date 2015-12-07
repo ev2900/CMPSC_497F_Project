@@ -21,6 +21,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Home Page
 app.use('/', routes);
 
+//Input
+app.use('/input', routes);
+
 app.listen(3000);
 
 console.log("Running at Port 3000");
