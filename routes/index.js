@@ -16,6 +16,11 @@ router.get('/', function(req, res, next) {
 	res.render('index');
 });
 
+// Input Page
+router.get('/', function(req, res, next) {
+	res.render('input');
+});
+
 //Post
 router.post('/ilike/:genome/:gff', function(req, res) {
 	
