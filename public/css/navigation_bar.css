@@ -1,0 +1,32 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+
+*{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-custom {
+	text-align: center;
+}
+
+.navbar .navbar-nav {
+	padding-top: 1em;
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+	font-size: 25px;
+	font-color: #5FA620;
+}
+
+.smaller {
+	font-size: 20px !important; 
+}
+
+a {
+	text-decoration: none;
+	color: #5FA620;
+}
+
+p {
+	font-size: 11.5pt;
+	line-height: 1.5;
+}
